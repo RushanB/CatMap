@@ -9,6 +9,7 @@
 #import "ShowAllViewController.h"
 #import "Photo.h"
 #import "CatsCollectionViewCell.h"
+#import "FlickrAPI.h"
 @import MapKit;
 
 @interface ShowAllViewController ()
@@ -21,7 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    for(Photo *catPhoto in self.m)
+    for(Photo *catPhoto in self){
+//        double lat = [catPhoto.di]
+    }
 }
 
 - (void)didReceiveMemoryWarning {

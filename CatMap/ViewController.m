@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "Photo.h"
 #import "CatsCollectionViewCell.h"
-#import "FlickrAPI.h"
+//#import "FlickrAPI.h"
+#import "URLManager.h"
 #import "DetailViewController.h"
 #import "SearchViewController.h"
 #import "ShowAllViewController.h"
@@ -37,6 +38,7 @@
     }];
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

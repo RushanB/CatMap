@@ -7,14 +7,20 @@
 //
 
 #import "SearchViewController.h"
+#import ""
 
-@interface SearchViewController ()
+@interface SearchViewController () <CLLocationManagerDelegate>
 
-@property (nonatomic) CLLocationManager *manager;
-@property bool useUserLocation;
-@property NSString *tags;
-@property CLLocationCoordinate2D location;
-@property NSSet <Photo*> *photos;
+@property (nonatomic, strong) CLLocationManager *searchLocationManager;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
+
+@property (nonatomic, assign) BOOL isAroundMe;
+@property (nonatomic, strong) NSMutableArray *imagesAroundMe;
+
+@property (nonatomic) CLLocation *myLocation;
 
 
 @end

@@ -13,17 +13,14 @@
 
 @interface Photo : NSObject <MKAnnotation>
 
-@property (nonatomic) NSString *photoServer;
-@property (nonatomic) NSString *photoFarm;
-@property (nonatomic) NSString *photoID;
-@property (nonatomic) NSString *photoSecret;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSURL *imageURL;
+@property (nonatomic, strong) NSString *photoID;
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
 -(instancetype)initWithInfo:(NSDictionary *)info;
 
--(NSURL *)url;
-
-
++ (NSArray *)makePhotoArray:(NSArray *)catPhotoArray;
 
 @end

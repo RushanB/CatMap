@@ -40,18 +40,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BHS-QG-WpF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="167"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="147"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbz-5n-16E">
+                                                    <rect key="frame" x="0.0" y="146" width="177" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="BHS-QG-WpF" secondAttribute="trailing" id="0f6-Fr-hrb"/>
-                                            <constraint firstItem="BHS-QG-WpF" firstAttribute="leading" secondItem="rxA-OZ-eZu" secondAttribute="leading" id="UQd-7f-LL0"/>
-                                            <constraint firstItem="BHS-QG-WpF" firstAttribute="top" secondItem="rxA-OZ-eZu" secondAttribute="top" id="VJn-6x-MOv"/>
-                                            <constraint firstAttribute="bottom" secondItem="BHS-QG-WpF" secondAttribute="bottom" id="i6Y-P6-tnQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="bbz-5n-16E" secondAttribute="trailing" id="2J3-RJ-uYF"/>
+                                            <constraint firstItem="bbz-5n-16E" firstAttribute="top" secondItem="rxA-OZ-eZu" secondAttribute="top" constant="146" id="Lms-fg-ht6"/>
+                                            <constraint firstAttribute="bottom" secondItem="BHS-QG-WpF" secondAttribute="bottom" constant="20" id="ZmG-Sy-wRQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="BHS-QG-WpF" secondAttribute="trailing" id="dCg-ko-MsY"/>
+                                            <constraint firstItem="BHS-QG-WpF" firstAttribute="leading" secondItem="rxA-OZ-eZu" secondAttribute="leading" id="vpB-wM-Pd3"/>
+                                            <constraint firstItem="BHS-QG-WpF" firstAttribute="top" secondItem="rxA-OZ-eZu" secondAttribute="top" id="wja-JT-Q5P"/>
+                                            <constraint firstItem="bbz-5n-16E" firstAttribute="leading" secondItem="rxA-OZ-eZu" secondAttribute="leading" id="xJC-43-NZZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="bbz-5n-16E" secondAttribute="bottom" id="yG2-Fv-o6a"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="catsImage" destination="BHS-QG-WpF" id="bSD-Kx-kjL"/>
+                                            <outlet property="imageView" destination="BHS-QG-WpF" id="Tte-6p-3hZ"/>
+                                            <outlet property="titleLabel" destination="bbz-5n-16E" id="Yz2-EH-KcT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -70,25 +82,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q34-SE-x5W">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="IkM-RP-XkM">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="opq-WD-ZKF">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show All"/>
-                                <connections>
-                                    <segue destination="36O-Cq-FVF" kind="show" id="Wgz-Op-0hu"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Show All" id="s8m-Pv-lyB">
+                            <connections>
+                                <segue destination="36O-Cq-FVF" kind="show" id="jHV-Vh-i8b"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="5Yb-op-RUY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="myN-gW-HSr">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <segue destination="zTP-Dr-RHY" kind="presentation" id="W8G-aW-MXU"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="uwt-eN-uON">
+                            <connections>
+                                <segue destination="zTP-Dr-RHY" kind="presentation" id="nb2-nk-eaf"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -98,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.79999999999995" y="43.628185907046479"/>
+            <point key="canvasLocation" x="992.79999999999995" y="43.628185907046479"/>
         </scene>
         <!--Detail-->
         <scene sceneID="4LV-lp-Mwu">

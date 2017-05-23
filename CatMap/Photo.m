@@ -12,16 +12,34 @@
 
 -(instancetype)initWithInfo:(NSDictionary *)info{
     if(self = [super init]){
-        _photoServer = info[@"server"];
-        _photoFarm = info[@"farm"];
-        _photoSecret = info[@"secret"];
-        _photoID = info[@"id"];
+        self.title = info[@"title"];
+        self.photoID = info[@"id"];
+        
+        
+        NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg",
+                               info[@"farm"],
+                               info[@"server"],
+                               info[@"id"],
+                               info[@"secret"]];
+        
+        self.imageURL = [NSURL URLWithString:urlString];
     }
     return self;
 }
 
--(NSURL *)url{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg",self.photoFarm, self.photoServer, self.photoID, self.photoSecret]];
+
++ (NSArray *)makePhotoArray:(NSArray *)catPhotoArray{
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *information in catPhotoArray) {
+        
+        Photo *photo = [[Photo alloc] initWithInfo:information];
+        [array addObject:photo];
+        
+    }
+    
+    return array;
 }
+
 
 @end

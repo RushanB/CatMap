@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Photo.h"
 @import CoreLocation;
-@class FlickrAPI;
 
+@protocol SearchViewControllerDelegate <NSObject>
 
-@interface SearchViewController : UIViewController <CLLocationManagerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property(nonatomic, copy) void(^addNewTags)(NSArray<Photo *>*photo);
-@property FlickrAPI *flickr;
+-(void)getArrayOfSearchedPhotos:(NSMutableArray *)arrayOfTaggedPhotos;
+
+@end
+
+@interface SearchViewController : UIViewController
+
+@property (nonatomic, weak) id <SearchViewControllerDelegate> searchViewControllerDelegate;
 
 @end

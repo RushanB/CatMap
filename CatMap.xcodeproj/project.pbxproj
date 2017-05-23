@@ -14,12 +14,14 @@
 		31A9061B1ED478A900B85B0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A9061A1ED478A900B85B0A /* Assets.xcassets */; };
 		31A9061E1ED478A900B85B0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A9061C1ED478A900B85B0A /* LaunchScreen.storyboard */; };
 		31A906271ED478EB00B85B0A /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A906261ED478EB00B85B0A /* Photo.m */; };
-		31A9062B1ED4795B00B85B0A /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A9062A1ED4795B00B85B0A /* FlickrAPI.m */; };
 		31A9062E1ED47A0500B85B0A /* CatsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A9062D1ED47A0500B85B0A /* CatsCollectionViewCell.m */; };
 		31BE35431ED4943300E4A5D0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BE35421ED4943300E4A5D0 /* DetailViewController.m */; };
 		31BE35461ED4944D00E4A5D0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BE35451ED4944D00E4A5D0 /* SearchViewController.m */; };
 		31BE35491ED4945800E4A5D0 /* ShowAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BE35481ED4945800E4A5D0 /* ShowAllViewController.m */; };
 		31BE35501ED4AF4400E4A5D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31BE354E1ED4AF4400E4A5D0 /* Main.storyboard */; };
+		31ECCA0E1ED4E1190007F4FF /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECCA0D1ED4E1190007F4FF /* LocationManager.m */; };
+		31ECCA111ED4E1D60007F4FF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECCA101ED4E1D60007F4FF /* APIManager.m */; };
+		31ECCA141ED4E6570007F4FF /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECCA131ED4E6570007F4FF /* CoreDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,8 @@
 		31A9060C1ED478A900B85B0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31A9060E1ED478A900B85B0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31A9060F1ED478A900B85B0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		31A906111ED478A900B85B0A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		31A906121ED478A900B85B0A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31A906111ED478A900B85B0A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = CatMap/ViewController.h; sourceTree = "<group>"; };
+		31A906121ED478A900B85B0A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = CatMap/ViewController.m; sourceTree = "<group>"; };
 		31A906181ED478A900B85B0A /* CatMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatMap.xcdatamodel; sourceTree = "<group>"; };
 		31A9061A1ED478A900B85B0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A9061D1ED478A900B85B0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,17 +38,21 @@
 		31A906251ED478EB00B85B0A /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		31A906261ED478EB00B85B0A /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		31A906281ED4793200B85B0A /* apiKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = apiKeys.h; sourceTree = "<group>"; };
-		31A906291ED4795B00B85B0A /* FlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPI.h; sourceTree = "<group>"; };
-		31A9062A1ED4795B00B85B0A /* FlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAPI.m; sourceTree = "<group>"; };
-		31A9062C1ED47A0500B85B0A /* CatsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatsCollectionViewCell.h; sourceTree = "<group>"; };
-		31A9062D1ED47A0500B85B0A /* CatsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatsCollectionViewCell.m; sourceTree = "<group>"; };
-		31BE35411ED4943300E4A5D0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		31BE35421ED4943300E4A5D0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		31BE35441ED4944C00E4A5D0 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		31BE35451ED4944D00E4A5D0 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		31BE35471ED4945800E4A5D0 /* ShowAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAllViewController.h; sourceTree = "<group>"; };
-		31BE35481ED4945800E4A5D0 /* ShowAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAllViewController.m; sourceTree = "<group>"; };
+		31A9062C1ED47A0500B85B0A /* CatsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CatsCollectionViewCell.h; path = CatMap/CatsCollectionViewCell.h; sourceTree = "<group>"; };
+		31A9062D1ED47A0500B85B0A /* CatsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CatsCollectionViewCell.m; path = CatMap/CatsCollectionViewCell.m; sourceTree = "<group>"; };
+		31BE35411ED4943300E4A5D0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = CatMap/DetailViewController.h; sourceTree = "<group>"; };
+		31BE35421ED4943300E4A5D0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = CatMap/DetailViewController.m; sourceTree = "<group>"; };
+		31BE35441ED4944C00E4A5D0 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = CatMap/SearchViewController.h; sourceTree = "<group>"; };
+		31BE35451ED4944D00E4A5D0 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = CatMap/SearchViewController.m; sourceTree = "<group>"; };
+		31BE35471ED4945800E4A5D0 /* ShowAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowAllViewController.h; path = CatMap/ShowAllViewController.h; sourceTree = "<group>"; };
+		31BE35481ED4945800E4A5D0 /* ShowAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowAllViewController.m; path = CatMap/ShowAllViewController.m; sourceTree = "<group>"; };
 		31BE354F1ED4AF4400E4A5D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31ECCA0C1ED4E1190007F4FF /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		31ECCA0D1ED4E1190007F4FF /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		31ECCA0F1ED4E1D60007F4FF /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		31ECCA101ED4E1D60007F4FF /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		31ECCA121ED4E6570007F4FF /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		31ECCA131ED4E6570007F4FF /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +69,9 @@
 		31A905FF1ED478A900B85B0A = {
 			isa = PBXGroup;
 			children = (
-				31A9060A1ED478A900B85B0A /* CatMap */,
+				31A9060A1ED478A900B85B0A /* Model */,
+				31ECCA0B1ED4DEEA0007F4FF /* View */,
+				31ECCA0A1ED4DEC20007F4FF /* Controller */,
 				31A906091ED478A900B85B0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,11 +84,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		31A9060A1ED478A900B85B0A /* CatMap */ = {
+		31A9060A1ED478A900B85B0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				31A9060E1ED478A900B85B0A /* AppDelegate.h */,
 				31A9060F1ED478A900B85B0A /* AppDelegate.m */,
+				31ECCA121ED4E6570007F4FF /* CoreDataManager.h */,
+				31ECCA131ED4E6570007F4FF /* CoreDataManager.m */,
+				31ECCA0F1ED4E1D60007F4FF /* APIManager.h */,
+				31ECCA101ED4E1D60007F4FF /* APIManager.m */,
+				31ECCA0C1ED4E1190007F4FF /* LocationManager.h */,
+				31ECCA0D1ED4E1190007F4FF /* LocationManager.m */,
+				31A906251ED478EB00B85B0A /* Photo.h */,
+				31A906261ED478EB00B85B0A /* Photo.m */,
+				31A906281ED4793200B85B0A /* apiKeys.h */,
+				31A9060B1ED478A900B85B0A /* Supporting Files */,
+			);
+			name = Model;
+			path = CatMap;
+			sourceTree = "<group>";
+		};
+		31A9060B1ED478A900B85B0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31A9061A1ED478A900B85B0A /* Assets.xcassets */,
+				31A9061C1ED478A900B85B0A /* LaunchScreen.storyboard */,
+				31A9061F1ED478A900B85B0A /* Info.plist */,
+				31A906171ED478A900B85B0A /* CatMap.xcdatamodeld */,
+				31A9060C1ED478A900B85B0A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31ECCA0A1ED4DEC20007F4FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				31A906111ED478A900B85B0A /* ViewController.h */,
 				31A906121ED478A900B85B0A /* ViewController.m */,
 				31BE35411ED4943300E4A5D0 /* DetailViewController.h */,
@@ -89,29 +127,18 @@
 				31BE35451ED4944D00E4A5D0 /* SearchViewController.m */,
 				31BE35471ED4945800E4A5D0 /* ShowAllViewController.h */,
 				31BE35481ED4945800E4A5D0 /* ShowAllViewController.m */,
-				31A9062C1ED47A0500B85B0A /* CatsCollectionViewCell.h */,
-				31A9062D1ED47A0500B85B0A /* CatsCollectionViewCell.m */,
-				31A906291ED4795B00B85B0A /* FlickrAPI.h */,
-				31A9062A1ED4795B00B85B0A /* FlickrAPI.m */,
-				31A906251ED478EB00B85B0A /* Photo.h */,
-				31A906261ED478EB00B85B0A /* Photo.m */,
-				31BE354E1ED4AF4400E4A5D0 /* Main.storyboard */,
-				31A906281ED4793200B85B0A /* apiKeys.h */,
-				31A9061A1ED478A900B85B0A /* Assets.xcassets */,
-				31A9061C1ED478A900B85B0A /* LaunchScreen.storyboard */,
-				31A9061F1ED478A900B85B0A /* Info.plist */,
-				31A906171ED478A900B85B0A /* CatMap.xcdatamodeld */,
-				31A9060B1ED478A900B85B0A /* Supporting Files */,
 			);
-			path = CatMap;
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		31A9060B1ED478A900B85B0A /* Supporting Files */ = {
+		31ECCA0B1ED4DEEA0007F4FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				31A9060C1ED478A900B85B0A /* main.m */,
+				31BE354E1ED4AF4400E4A5D0 /* Main.storyboard */,
+				31A9062C1ED47A0500B85B0A /* CatsCollectionViewCell.h */,
+				31A9062D1ED47A0500B85B0A /* CatsCollectionViewCell.m */,
 			);
-			name = "Supporting Files";
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,10 +215,12 @@
 				31A906131ED478A900B85B0A /* ViewController.m in Sources */,
 				31BE35491ED4945800E4A5D0 /* ShowAllViewController.m in Sources */,
 				31A906191ED478A900B85B0A /* CatMap.xcdatamodeld in Sources */,
+				31ECCA0E1ED4E1190007F4FF /* LocationManager.m in Sources */,
 				31A906101ED478A900B85B0A /* AppDelegate.m in Sources */,
 				31BE35431ED4943300E4A5D0 /* DetailViewController.m in Sources */,
+				31ECCA141ED4E6570007F4FF /* CoreDataManager.m in Sources */,
 				31BE35461ED4944D00E4A5D0 /* SearchViewController.m in Sources */,
-				31A9062B1ED4795B00B85B0A /* FlickrAPI.m in Sources */,
+				31ECCA111ED4E1D60007F4FF /* APIManager.m in Sources */,
 				31A906271ED478EB00B85B0A /* Photo.m in Sources */,
 				31A9062E1ED47A0500B85B0A /* CatsCollectionViewCell.m in Sources */,
 				31A9060D1ED478A900B85B0A /* main.m in Sources */,
@@ -215,6 +244,7 @@
 				31BE354F1ED4AF4400E4A5D0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = CatMap;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
