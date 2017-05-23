@@ -62,10 +62,19 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if(segue.identifier isEqualToString:@"Detail"){
-        DetailViewController *dvc = (DetailViewController *)[segue ]
-        NSIndexPath *indexPath = [self
+    if([segue.identifier isEqualToString:@"Detail"]){
+        DetailViewController *dvc = (DetailViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.catsCollectionView indexPathForCell:sender];
+//        dvc.catPhoto = self.
+//    }
+//    if([segue.identifier isEqualToString:@"Search"]){
+//        SearchViewController *svc = (SearchViewController *)[segue destinationViewController];
+//        svc. = self.
+//        svc.addNewTags = ^(NSArray<Photo *> *cats){
+//            self.
+//        }
     }
 }
 
+    
 @end

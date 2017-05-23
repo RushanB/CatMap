@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
+@import CoreLocation;
+@class FlickrAPI;
 
-@interface SearchViewController : UIViewController
+
+@interface SearchViewController : UIViewController <CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property(nonatomic, copy) void(^addNewTags)(NSArray<Photo *>*photo);
+@property FlickrAPI *flickr;
 
 @end

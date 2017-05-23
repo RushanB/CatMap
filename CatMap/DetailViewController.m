@@ -25,9 +25,9 @@
     self.imageID = self.catPhoto.photoID;
     NSURL *parseURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method-flickr.photos.geo.getLocation&api_key=%@&photo_id=%@&format=json&nojsoncallback=1",FLICKR_APIKEY, self.imageID]];
     
-    NSURL *urlRequest = [[NSURLRequest alloc]initWithURL:parseURL];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc]initWithURL:parseURL];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:kCFProxyAutoConfigurationHTTPResponseKey];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error){
@@ -41,7 +41,7 @@
             return;
         }
         NSDictionary *photos = [latlongDict objectForKey:@"photo"];
-        NSDictionary *location = [latlongDict objectForKey:@"location"];
+        NSDictionary *location = [photos objectForKey:@"location"];
         double lat = [[location objectForKey:@"latitude"]doubleValue];
         double lon = [[location objectForKey:@"longitude"]doubleValue];
         

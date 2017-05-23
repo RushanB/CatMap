@@ -10,28 +10,55 @@
 
 @interface SearchViewController ()
 
+@property (nonatomic) CLLocationManager *manager;
+@property bool useUserLocation;
+@property NSString *tags;
+@property CLLocationCoordinate2D location;
+@property NSSet <Photo*> *photos;
+
+
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)saveButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self parsePhotos];
+    }];
 }
-*/
+
+-(void)parsePhotos{
+    
+}
+
+- (IBAction)useLocation:(id)sender {
+    if([sender isOn]){
+        [self.manager requestLocation];
+        CLLocation *coordinate = self.manager.location;
+        self.location = coordinate.coordinate;
+        self.useUserLocation = YES;
+    }
+    else
+        self.useUserLocation = NO;
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+}
+
 
 @end
