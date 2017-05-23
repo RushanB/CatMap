@@ -7,18 +7,20 @@
 //
 
 #import "ViewController.h"
-#import "Photo.h"
+#import "APIManager.h"
 #import "CatsCollectionViewCell.h"
-//#import "FlickrAPI.h"
-#import "URLManager.h"
 #import "DetailViewController.h"
 #import "SearchViewController.h"
 #import "ShowAllViewController.h"
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, SearchViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *catsCollectionView;
-@property (nonatomic) NSArray *allPhotos;
+@property (nonatomic) NSMutableArray *photoArray;
+
+@property (nonatomic) NSIndexPath *currentIndexPath;
+
+@property (nonatomic) ShowAllViewController *showAllVC;
 
 @end
 
@@ -26,17 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.allPhotos = [NSArray array];
-    
-    [FlickrAPI searchFor:@"Cats" complete:^(NSArray *searchResults) {
-        NSLog(@"Found %@", searchResults);
-        
-        self.allPhotos = searchResults;
-        
-        [self.catsCollectionView reloadData];
-    }];
-    
+  
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,28 +48,32 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CatsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cats" forIndexPath:indexPath];
-    //    cell.catsImage.image = self.allPhotos[indexPath.row];
-    Photo *photo = self.allPhotos[indexPath.row];
-    NSData *imgData = [[NSData alloc]initWithContentsOfURL:photo.url];
-    cell.catsImage.image = [UIImage imageWithData:imgData];
+    cell.aPhoto = self.photoArray[indexPath.row];
     
     return cell;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"Detail"]){
-        DetailViewController *dvc = (DetailViewController *)[segue destinationViewController];
-        NSIndexPath *indexPath = [self.catsCollectionView indexPathForCell:sender];
-//        dvc.catPhoto = self.
-//    }
-//    if([segue.identifier isEqualToString:@"Search"]){
-//        SearchViewController *svc = (SearchViewController *)[segue destinationViewController];
-//        svc. = self.
-//        svc.addNewTags = ^(NSArray<Photo *> *cats){
-//            self.
-//        }
+        Photo *photo = [self.photoArray objectAtIndex:self.currentIndexPath.item];
+        DetailViewController *dvc = segue.destinationViewController;
+        dvc.aPhoto = photo;
+    }
+    if([segue.identifier isEqualToString:@"Search"]){
+        SearchViewController *svc = segue.destinationViewController;
+        svc.searchViewControllerDelegate = self;
+    }
+    if([segue.identifier isEqualToString:@"All"]){
+        ShowAllViewController *showAllVC = segue.destinationViewController;
+        showAllVC.showAllPhotos = self.photoArray;
     }
 }
 
+-(void)getArrayOfSearchedPhotos:(NSMutableArray *)arrayOfTaggedPhotos{
+    self.photoArray = arrayOfTaggedPhotos;
+    
+    [self.catsCollectionView reloadData];
+    
+}
     
 @end

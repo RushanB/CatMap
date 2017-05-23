@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Photo.h"
+@import MapKit;
 
 @interface DetailViewController : UIViewController
 
-@property NSString *imageID;
-@property Photo *catPhoto;
+@property (nonatomic) Photo *aPhoto;
 
 @end

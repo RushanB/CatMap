@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
-@interface ShowAllViewController : UIViewController
+@interface ShowAllViewController : UIViewController <MKAnnotation>
+
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic) NSMutableArray *showAllPhotos;
+
 
 @end

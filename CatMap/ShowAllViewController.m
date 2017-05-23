@@ -7,13 +7,13 @@
 //
 
 #import "ShowAllViewController.h"
+#import "LocationManager.h"
 #import "Photo.h"
-#import "CatsCollectionViewCell.h"
-#import "FlickrAPI.h"
 @import MapKit;
 
 @interface ShowAllViewController ()
-@property (weak, nonatomic) IBOutlet MKMapView *map;
+
+@property (weak, nonatomic) IBOutlet MKMapView *photoLocation;
 
 @end
 
@@ -22,9 +22,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    for(Photo *catPhoto in self){
-//        double lat = [catPhoto.di]
+    [self getCoordinates:self.showAllPhotos];
+    
+}
+
+
+-(void)getCoordinates:(NSMutableArray *)arrayOfPic{
+    for(Photo *photo in self.showAllPhotos){
+        [LocationManager getPictureLocationData:photo completion:^(CLLocationCoordinate2D coordinates) {
+            photo.coordinate = coordinates;
+            [self addAnnotationToMap:photo];
+        }];
     }
+}
+
+-(void)addAnnotationToMap:(Photo *)thisPhoto{
+    [self.photoLocation addAnnotation:thisPhoto];
 }
 
 - (void)didReceiveMemoryWarning {

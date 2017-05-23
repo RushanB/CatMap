@@ -7,13 +7,17 @@
 //
 
 #import "DetailViewController.h"
-#import "Photo.h"
-#import "apiKeys.h"
-@import MapKit;
+#import "LocationManager.h"
+#import "APIManager.h"
 
 @interface DetailViewController ()
 
-@property (weak, nonatomic) IBOutlet MKMapView *map;
+@property (weak, nonatomic) IBOutlet UIImageView *detailImage;
+@property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *photoLocation;
 
 @end
 
@@ -22,40 +26,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.imageID = self.catPhoto.photoID;
-    NSURL *parseURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method-flickr.photos.geo.getLocation&api_key=%@&photo_id=%@&format=json&nojsoncallback=1",FLICKR_APIKEY, self.imageID]];
+    self.navigationItem.title = self.aPhoto.title;
     
-    NSURLRequest *urlRequest = [[NSURLRequest alloc]initWithURL:parseURL];
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if(error){
-            NSLog(@"Error: %@", error.localizedDescription);
-            return;
-        }
-        NSError *jsonError = nil;
-        NSDictionary *latlongDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        if(jsonError){
-            NSLog(@"jsonError: %@", jsonError.localizedDescription);
-            return;
-        }
-        NSDictionary *photos = [latlongDict objectForKey:@"photo"];
-        NSDictionary *location = [photos objectForKey:@"location"];
-        double lat = [[location objectForKey:@"latitude"]doubleValue];
-        double lon = [[location objectForKey:@"longitude"]doubleValue];
+    [LocationManager getPictureLocationData:self.aPhoto completion:^(CLLocationCoordinate2D coordinate) {
+        self.aPhoto.coordinate = coordinate;
+        self.latitudeLabel.text = [NSString stringWithFormat:@"Latitude: %f", self.aPhoto.coordinate.latitude];
+        self.longitudeLabel.text = [NSString stringWithFormat:@"Longitude: %f", self.aPhoto.coordinate.longitude];
         
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lon);
-        self.catPhoto.coordinate = coord;
-        
-        MKCoordinateSpan span = MKCoordinateSpanMake(0.5f, 0.5f);
-        self.map.region = MKCoordinateRegionMake(self.catPhoto.coordinate, span);
-        
-        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-            [self.map addAnnotation:self.catPhoto];
-        }];
+        [self setMapView];
     }];
-    [dataTask resume];
+    
+    [self configureCell];
+}
+
+- (void) configureCell{
+    [APIManager downloadPhotos:self.aPhoto.imageURL completion:^(UIImage *image) {
+        self.detailImage.image = image;
+    }];
+}
+
+-(void) setMapView{
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.5f, 0.5f);
+    self.photoLocation.region = MKCoordinateRegionMake(self.aPhoto.coordinate, span);
+    [self.photoLocation addAnnotation:self.aPhoto];
 }
 
 - (void)didReceiveMemoryWarning {
