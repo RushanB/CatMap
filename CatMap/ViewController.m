@@ -12,7 +12,6 @@
 #import "DetailViewController.h"
 #import "SearchViewController.h"
 #import "ShowAllViewController.h"
-@import MapKit;
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, SearchViewControllerDelegate>
 
@@ -21,7 +20,7 @@
 
 @property (nonatomic) NSIndexPath *currentIndexPath;
 
-//@property (nonatomic) ShowAllViewController *showAllVC;
+@property (nonatomic) ShowAllViewController *showAllVC;
 
 @end
 

@@ -113,14 +113,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-Cj-hR8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="285"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="285" id="V9v-L6-vmK"/>
-                                </constraints>
-                            </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZE9-RQ-CaF">
-                                <rect key="frame" x="0.0" y="382" width="375" height="285"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="285"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Latitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5P-Kz-MCc">
                                 <rect key="frame" x="0.0" y="357" width="186" height="21"/>
@@ -134,21 +128,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-Cj-hR8">
+                                <rect key="frame" x="0.0" y="382" width="375" height="285"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="V9v-L6-vmK"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="e68-EI-KW1" secondAttribute="trailing" id="17s-w2-qmv"/>
                             <constraint firstItem="p7Q-Cj-hR8" firstAttribute="leading" secondItem="gyt-ay-D9r" secondAttribute="leading" id="BJN-d3-lr1"/>
-                            <constraint firstItem="p7Q-Cj-hR8" firstAttribute="top" secondItem="8sC-1E-txF" secondAttribute="bottom" id="Cy5-lo-fgS"/>
-                            <constraint firstItem="e68-EI-KW1" firstAttribute="top" secondItem="p7Q-Cj-hR8" secondAttribute="bottom" constant="8" id="LLv-RZ-Imq"/>
-                            <constraint firstItem="h5P-Kz-MCc" firstAttribute="top" secondItem="p7Q-Cj-hR8" secondAttribute="bottom" constant="8" id="PNr-Jg-OwE"/>
+                            <constraint firstItem="p7Q-Cj-hR8" firstAttribute="top" secondItem="8sC-1E-txF" secondAttribute="bottom" constant="318" id="Cy5-lo-fgS"/>
+                            <constraint firstItem="e68-EI-KW1" firstAttribute="top" secondItem="p7Q-Cj-hR8" secondAttribute="bottom" constant="-310" id="LLv-RZ-Imq"/>
+                            <constraint firstItem="h5P-Kz-MCc" firstAttribute="top" secondItem="p7Q-Cj-hR8" secondAttribute="bottom" constant="-310" id="PNr-Jg-OwE"/>
                             <constraint firstAttribute="trailing" secondItem="ZE9-RQ-CaF" secondAttribute="trailing" id="ZNi-ZU-GJQ"/>
                             <constraint firstItem="ZE9-RQ-CaF" firstAttribute="leading" secondItem="gyt-ay-D9r" secondAttribute="leading" id="c7B-t7-i1Q"/>
                             <constraint firstAttribute="trailing" secondItem="p7Q-Cj-hR8" secondAttribute="trailing" id="fIW-x5-64l"/>
-                            <constraint firstItem="ufc-Iu-ftA" firstAttribute="top" secondItem="ZE9-RQ-CaF" secondAttribute="bottom" id="m5j-RZ-nyM"/>
+                            <constraint firstItem="ufc-Iu-ftA" firstAttribute="top" secondItem="ZE9-RQ-CaF" secondAttribute="bottom" constant="318" id="m5j-RZ-nyM"/>
                             <constraint firstItem="h5P-Kz-MCc" firstAttribute="leading" secondItem="gyt-ay-D9r" secondAttribute="leading" id="oMw-xI-C3F"/>
-                            <constraint firstItem="ZE9-RQ-CaF" firstAttribute="top" secondItem="h5P-Kz-MCc" secondAttribute="bottom" constant="4" id="spR-zI-FsL"/>
-                            <constraint firstItem="ZE9-RQ-CaF" firstAttribute="top" secondItem="e68-EI-KW1" secondAttribute="bottom" constant="4" id="wPd-7F-b9q"/>
+                            <constraint firstItem="ZE9-RQ-CaF" firstAttribute="top" secondItem="h5P-Kz-MCc" secondAttribute="bottom" constant="-314" id="spR-zI-FsL"/>
+                            <constraint firstItem="ZE9-RQ-CaF" firstAttribute="top" secondItem="e68-EI-KW1" secondAttribute="bottom" constant="-314" id="wPd-7F-b9q"/>
                         </constraints>
                     </view>
                     <connections>
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHP-Pz-N0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="77"/>
+            <point key="canvasLocation" x="2559" y="-54"/>
         </scene>
         <!--Show All View Controller-->
         <scene sceneID="uqF-VW-9VV">

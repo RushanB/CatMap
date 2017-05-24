@@ -22,6 +22,9 @@
 		31ECCA0E1ED4E1190007F4FF /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECCA0D1ED4E1190007F4FF /* LocationManager.m */; };
 		31ECCA111ED4E1D60007F4FF /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECCA101ED4E1D60007F4FF /* APIManager.m */; };
 		31ECCA141ED4E6570007F4FF /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECCA131ED4E6570007F4FF /* CoreDataManager.m */; };
+		31ECCA161ED553080007F4FF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECCA151ED553080007F4FF /* MapKit.framework */; };
+		31ECCA181ED5530D0007F4FF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECCA171ED5530D0007F4FF /* CoreLocation.framework */; };
+		31ECCA1A1ED553130007F4FF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECCA191ED553130007F4FF /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		31ECCA101ED4E1D60007F4FF /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		31ECCA121ED4E6570007F4FF /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		31ECCA131ED4E6570007F4FF /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		31ECCA151ED553080007F4FF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		31ECCA171ED5530D0007F4FF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		31ECCA191ED553130007F4FF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31ECCA181ED5530D0007F4FF /* CoreLocation.framework in Frameworks */,
+				31ECCA1A1ED553130007F4FF /* CoreData.framework in Frameworks */,
+				31ECCA161ED553080007F4FF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,10 +78,12 @@
 		31A905FF1ED478A900B85B0A = {
 			isa = PBXGroup;
 			children = (
+				31ECCA1B1ED5536C0007F4FF /* Framework */,
+				31A9060B1ED478A900B85B0A /* Supporting Files */,
+				31A906091ED478A900B85B0A /* Products */,
 				31A9060A1ED478A900B85B0A /* Model */,
 				31ECCA0B1ED4DEEA0007F4FF /* View */,
 				31ECCA0A1ED4DEC20007F4FF /* Controller */,
-				31A906091ED478A900B85B0A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +109,6 @@
 				31A906251ED478EB00B85B0A /* Photo.h */,
 				31A906261ED478EB00B85B0A /* Photo.m */,
 				31A906281ED4793200B85B0A /* apiKeys.h */,
-				31A9060B1ED478A900B85B0A /* Supporting Files */,
 			);
 			name = Model;
 			path = CatMap;
@@ -114,6 +124,7 @@
 				31A9060C1ED478A900B85B0A /* main.m */,
 			);
 			name = "Supporting Files";
+			path = CatMap;
 			sourceTree = "<group>";
 		};
 		31ECCA0A1ED4DEC20007F4FF /* Controller */ = {
@@ -139,6 +150,16 @@
 				31A9062D1ED47A0500B85B0A /* CatsCollectionViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		31ECCA1B1ED5536C0007F4FF /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				31ECCA191ED553130007F4FF /* CoreData.framework */,
+				31ECCA171ED5530D0007F4FF /* CoreLocation.framework */,
+				31ECCA151ED553080007F4FF /* MapKit.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

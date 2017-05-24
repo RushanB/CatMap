@@ -9,7 +9,6 @@
 #import "ShowAllViewController.h"
 #import "LocationManager.h"
 #import "Photo.h"
-@import MapKit;
 
 @interface ShowAllViewController ()
 
