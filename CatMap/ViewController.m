@@ -12,6 +12,7 @@
 #import "DetailViewController.h"
 #import "SearchViewController.h"
 #import "ShowAllViewController.h"
+@import MapKit;
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, SearchViewControllerDelegate>
 
@@ -20,7 +21,7 @@
 
 @property (nonatomic) NSIndexPath *currentIndexPath;
 
-@property (nonatomic) ShowAllViewController *showAllVC;
+//@property (nonatomic) ShowAllViewController *showAllVC;
 
 @end
 
@@ -28,8 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-
+    
+    [self performSegueWithIdentifier:@"Search" sender:self];
+    self.photoArray = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,15 +44,20 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [self.allPhotos count];
+    return [self.photoArray count];
     
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    CatsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cats" forIndexPath:indexPath];
+    CatsCollectionViewCell *cell = [self.catsCollectionView dequeueReusableCellWithReuseIdentifier:@"Cats" forIndexPath:indexPath];
     cell.aPhoto = self.photoArray[indexPath.row];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.currentIndexPath = indexPath;
+    [self performSegueWithIdentifier:@"Detail" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -63,7 +70,7 @@
         SearchViewController *svc = segue.destinationViewController;
         svc.searchViewControllerDelegate = self;
     }
-    if([segue.identifier isEqualToString:@"All"]){
+    if([segue.identifier isEqualToString:@"ShowAll"]){
         ShowAllViewController *showAllVC = segue.destinationViewController;
         showAllVC.showAllPhotos = self.photoArray;
     }

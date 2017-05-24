@@ -13,14 +13,15 @@
 @implementation APIManager
 
 + (void)getPhotos:(NSString *)taggedItems andLatitude:(double)photoLatitude andLongitude:(double)photoLongitude withBlock:(void (^)(NSArray *))completion{
+    
     NSString *urlString = [[NSString alloc] init];
     
     if (photoLatitude == 0 && photoLongitude == 0) {
         
-        urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=%@&tags=%@",
+        urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&tags=%@&has_geo=1&extras=url_m&format=json&nojsoncallback=1",
                      FLICKR_APIKEY, taggedItems];
     }else{
-        urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=%@&tags=%@&has_geo=1&lat=%f&lon=%f&extras=url_m&format=json&nojsoncallback=1", FLICKR_APIKEY, taggedItems, photoLatitude, photoLongitude];
+        urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&tags=%@&has_geo=1&lat=%f&lon=%f&extras=url_m&format=json&nojsoncallback=1", FLICKR_APIKEY, taggedItems, photoLatitude, photoLongitude];
         
     }
     

@@ -21,6 +21,6 @@
 
 -(instancetype)initWithInfo:(NSDictionary *)info;
 
-+ (NSArray *)makePhotoArray:(NSArray *)catPhotoArray;
++ (NSArray *)makePhotoArray:(NSArray *)aPhotoArray;
 
 @end

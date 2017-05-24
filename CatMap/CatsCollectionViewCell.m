@@ -19,7 +19,7 @@
 @implementation CatsCollectionViewCell
 
 -(void)setAPhoto:(Photo *)aPhoto{
-    aPhoto = aPhoto;
+    _aPhoto = aPhoto;
     [self configureCell];
     
 }
