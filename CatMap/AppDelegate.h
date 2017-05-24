@@ -14,7 +14,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;  //CoreData Object Model
 @property (nonatomic) NSManagedObjectModel *managedObjectModel;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
