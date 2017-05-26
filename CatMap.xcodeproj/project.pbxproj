@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		319B81051ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 319B81021ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.m */; };
+		319B81061ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 319B81041ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.m */; };
 		31A9060D1ED478A900B85B0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A9060C1ED478A900B85B0A /* main.m */; };
 		31A906101ED478A900B85B0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A9060F1ED478A900B85B0A /* AppDelegate.m */; };
 		31A906131ED478A900B85B0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A906121ED478A900B85B0A /* ViewController.m */; };
@@ -28,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		319B81011ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PhotoEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		319B81021ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PhotoEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		319B81031ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PhotoEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		319B81041ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PhotoEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		31A906081ED478A900B85B0A /* CatMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9060C1ED478A900B85B0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31A9060E1ED478A900B85B0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +84,10 @@
 		31A905FF1ED478A900B85B0A = {
 			isa = PBXGroup;
 			children = (
+				319B81011ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.h */,
+				319B81021ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.m */,
+				319B81031ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.h */,
+				319B81041ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.m */,
 				31ECCA1B1ED5536C0007F4FF /* Framework */,
 				31A9060B1ED478A900B85B0A /* Supporting Files */,
 				31A906091ED478A900B85B0A /* Products */,
@@ -236,10 +246,12 @@
 				31A906131ED478A900B85B0A /* ViewController.m in Sources */,
 				31BE35491ED4945800E4A5D0 /* ShowAllViewController.m in Sources */,
 				31A906191ED478A900B85B0A /* CatMap.xcdatamodeld in Sources */,
+				319B81051ED8B2EC00331D7E /* PhotoEntity+CoreDataClass.m in Sources */,
 				31ECCA0E1ED4E1190007F4FF /* LocationManager.m in Sources */,
 				31A906101ED478A900B85B0A /* AppDelegate.m in Sources */,
 				31BE35431ED4943300E4A5D0 /* DetailViewController.m in Sources */,
 				31ECCA141ED4E6570007F4FF /* CoreDataManager.m in Sources */,
+				319B81061ED8B2EC00331D7E /* PhotoEntity+CoreDataProperties.m in Sources */,
 				31BE35461ED4944D00E4A5D0 /* SearchViewController.m in Sources */,
 				31ECCA111ED4E1D60007F4FF /* APIManager.m in Sources */,
 				31A906271ED478EB00B85B0A /* Photo.m in Sources */,
