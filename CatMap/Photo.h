@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @import MapKit;
+@import CoreData;
 
 
 @interface Photo : NSObject <MKAnnotation>

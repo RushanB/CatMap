@@ -38,6 +38,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark TABLEVIEW
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
@@ -58,6 +60,9 @@
     self.currentIndexPath = indexPath;
     [self performSegueWithIdentifier:@"Detail" sender:self];
 }
+
+#pragma mark SEGUE
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"Detail"]){

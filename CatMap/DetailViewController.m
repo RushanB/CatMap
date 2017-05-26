@@ -29,7 +29,9 @@
     self.navigationItem.title = self.aPhoto.title;
     
     [LocationManager getPictureLocationData:self.aPhoto completion:^(CLLocationCoordinate2D coordinate) {
-        self.aPhoto.coordinate = coordinate;
+        
+        self.aPhoto.coordinate = coordinate;  //sets photo to coordinate
+        
         self.latitudeLabel.text = [NSString stringWithFormat:@"Latitude: %f", self.aPhoto.coordinate.latitude];
         self.longitudeLabel.text = [NSString stringWithFormat:@"Longitude: %f", self.aPhoto.coordinate.longitude];
         
@@ -51,10 +53,6 @@
     [self.photoLocation addAnnotation:self.aPhoto];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "PhotoEntity+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface CoreDataManager : NSObject
 

@@ -13,7 +13,7 @@
 
 + (void)getPictureLocationData:(Photo*)picture completion:(void (^)(CLLocationCoordinate2D))completion
 {
-    NSString *urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=%@&tags=%@",
+    NSString *urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&api_key=%@&photo_id=%@&format=json&nojsoncallback=1",
                            FLICKR_APIKEY,
                            picture.photoID];
     
@@ -57,10 +57,10 @@
                                           double latitude = [[locationDictionary valueForKey:@"latitude"]doubleValue];
                                           double longitude = [[locationDictionary valueForKey:@"longitude"]doubleValue];
                                           
-                                          CLLocationCoordinate2D catLocation = CLLocationCoordinate2DMake(latitude, longitude);
+                                          CLLocationCoordinate2D newLocation = CLLocationCoordinate2DMake(latitude, longitude);
                                           
                                           [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                                              completion(catLocation);
+                                              completion(newLocation);
                                               
                                           }];
                                           
